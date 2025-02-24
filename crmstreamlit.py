@@ -57,16 +57,23 @@ if len(df) > 0:
     if oportunidade_id:
         oportunidade = df[df["ID"] == oportunidade_id].iloc[0]
 
-        txt_nome = st.text_input("Nome do Cliente", oportunidade["Nome"])
-        txt_contato = st.text_input("Contato", oportunidade["Contato"])
-        txt_email = st.text_input("E-mail", oportunidade["E-mail"])
-        txt_telefone = st.text_input("Telefone", oportunidade["Telefone"])
-        txt_cidade = st.text_input("Cidade", oportunidade["Cidade"])
-        txt_estado = st.text_input("Estado", oportunidade["Estado"])
+        txt_nome = st.text_input("Nome do Cliente", oportunidade["Nome"], key="nome_cliente")
+txt_contato = st.text_input("Contato", oportunidade["Contato"], key="contato_cliente")
+txt_email = st.text_input("E-mail", oportunidade["E-mail"], key="email_cliente")
+txt_telefone = st.text_input("Telefone", oportunidade["Telefone"], key="telefone_cliente")
+txt_cidade = st.text_input("Cidade", oportunidade["Cidade"], key="cidade_cliente")
+txt_estado = st.text_input("Estado", oportunidade["Estado"], key="estado_cliente")
 
-        txt_tipo_oportunidade = st.selectbox("Tipo de Oportunidade", tipos_oportunidade, index=tipos_oportunidade.index(oportunidade["Tipo de Oportunidade"]))
-        txt_fase = st.selectbox("Fase", fases, index=fases.index(oportunidade["Fase"]))
-        txt_tipo_cliente = st.selectbox("Tipo de Cliente", tipos_cliente, index=tipos_cliente.index(oportunidade["Tipo de Cliente"]))
+            txt_tipo_oportunidade = st.selectbox("Tipo de Oportunidade", tipos_oportunidade, 
+                                     index=tipos_oportunidade.index(oportunidade["Tipo de Oportunidade"]) if "Tipo de Oportunidade" in oportunidade and oportunidade["Tipo de Oportunidade"] in tipos_oportunidade else 0, key="tipo_oportunidade")
+
+txt_fase = st.selectbox("Fase", fases, 
+                        index=fases.index(oportunidade["Fase"]) if "Fase" in oportunidade and oportunidade["Fase"] in fases else 0, key="fase")
+
+txt_tipo_cliente = st.selectbox("Tipo de Cliente", tipos_cliente, 
+                                index=tipos_cliente.index(oportunidade["Tipo de Cliente"]) if "Tipo de Cliente" in oportunidade and oportunidade["Tipo de Cliente"] in tipos_cliente else 0, key="tipo_cliente")
+
+       
 
         if st.button("Salvar Alterações"):
             df.loc[df["ID"] == oportunidade_id, ["Nome", "Contato", "E-mail", "Telefone", "Cidade", "Estado", "Tipo de Oportunidade", "Fase", "Tipo de Cliente"]] = \
