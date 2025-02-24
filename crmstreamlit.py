@@ -44,7 +44,7 @@ if st.sidebar.button("Adicionar Oportunidade"):
                                columns=df.columns)
     st.session_state.df = pd.concat([df, nova_linha], ignore_index=True)
     st.success(f"Oportunidade {novo_id} adicionada com sucesso!")
-    st.experimental_rerun()  # Atualiza a página para refletir as mudanças
+    st.rerun()  # Atualiza a página para refletir as mudanças
 
 # Layout para edição de oportunidades
 st.markdown("### 📑 Oportunidades Registradas")
@@ -73,8 +73,7 @@ if len(df) > 0:
                 [txt_nome, txt_contato, txt_email, txt_telefone, txt_cidade, txt_estado, txt_tipo_oportunidade, txt_fase, txt_tipo_cliente]
             st.session_state.df = df
             st.success("Alterações salvas com sucesso!")
-            st.experimental_rerun()  # Atualiza a página para refletir as mudanças
+            st.rerun()  # Atualiza a página para refletir as mudanças
 
 else:
     st.info("Nenhuma oportunidade cadastrada. Adicione uma nova para começar!")
-
