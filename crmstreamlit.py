@@ -2,10 +2,14 @@ import streamlit as st
 import pandas as pd
 from datetime import datetime
 
-# Carregar dados
+# URL do arquivo CSV no GitHub (substitua pelo link bruto do seu repositório)
+CSV_URL = "https://raw.githubusercontent.com/brunocordeirosantos/Alcapgestao/main/CRM_Clientes_Allcap_Trust%20-%20CRM%20(1).csv"
+
+# Função para carregar os dados do GitHub
 @st.cache_data
 def load_data():
-    return pd.read_csv("CRM_Clientes_Allcap_Trust.csv")
+    df = pd.read_csv(CSV_URL, sep=",")
+    return df
 
 df = load_data()
 
