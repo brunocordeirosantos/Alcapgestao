@@ -1,95 +1,76 @@
 import streamlit as st
 import pandas as pd
 
-# Caminho do arquivo CSV no GitHub
+# URL do arquivo CSV no GitHub
 CSV_URL = "https://raw.githubusercontent.com/brunocordeirosantos/Alcapgestao/main/CRM_Clientes_Allcap_Trust%20-%20CRM%20(1).csv"
 
-# Função para carregar os dados
+@st.cache_data
 def load_data():
-    df = pd.read_csv(CSV_URL, encoding='utf-8', sep=',')
-    return df
+    try:
+        df = pd.read_csv(CSV_URL, sep=",", encoding="utf-8", dtype=str)
+        return df.fillna("")  # Preenchendo valores nulos com string vazia para evitar erros
+    except Exception as e:
+        st.error(f"Erro ao carregar os dados: {e}")
+        return pd.DataFrame()
 
-# Carrega os dados do CSV
-df = load_data()
+def save_data(df):
+    df.to_csv("CRM_Clientes_Allcap_Trust - CRM (1).csv", index=False)
 
-# Função para salvar nova oportunidade
-def save_new_opportunity(new_opportunity):
-    global df
-    new_df = pd.DataFrame([new_opportunity])
-    df = pd.concat([df, new_df], ignore_index=True)
-    st.success("Oportunidade adicionada com sucesso!")
-
-# Sidebar para adicionar nova oportunidade
-st.sidebar.header("➕ Adicionar Nova Oportunidade")
-with st.sidebar.form("nova_oportunidade_form"):
-    novo_nome = st.text_input("Nome do Cliente")
-    novo_contato = st.text_input("Contato")
-    novo_email = st.text_input("E-mail")
-    novo_telefone = st.text_input("Telefone")
-    nova_cidade = st.text_input("Cidade")
-    novo_estado = st.text_input("Estado")
-    novo_tipo_op = st.selectbox("Tipo de Oportunidade", df["Tipo de Oportunidade"].unique())
-    nova_fase = st.selectbox("Fase", df["Fase"].unique())
-    novo_tipo_cliente = st.selectbox("Tipo de Cliente", df["Tipo de Cliente"].unique())
-    novo_segmento = st.selectbox("Segmento de Mercado do Cliente", df["Segmento de Mercado do Cliente"].unique())
-    novo_produto = st.text_input("Produto/Solução Específica")
-    novo_valor = st.text_input("Valor Estimado (R$)")
-    nova_etapa_f = st.text_input("Etapa no Funil de Vendas")
-    nova_proxima_acao = st.text_input("Próxima Ação")
-    novo_responsavel = st.text_input("Responsável pela Oportunidade")
-    
-    submit = st.form_submit_button("Adicionar Oportunidade")
-    if submit:
-        new_opportunity = {
-            "ID": f"OP{len(df) + 1:03}",
-            "Nome": novo_nome,
-            "Contato": novo_contato,
-            "E-mail": novo_email,
-            "Telefone": novo_telefone,
-            "Cidade": nova_cidade,
-            "Estado": novo_estado,
-            "Tipo de Oportunidade": novo_tipo_op,
-            "Fase": nova_fase,
-            "Tipo de Cliente": novo_tipo_cliente,
-            "Segmento de Mercado do Cliente": novo_segmento,
-            "Produto/Solução Específica": novo_produto,
-            "Valor Estimado (R$)": novo_valor,
-            "Etapa no Funil de Vendas": nova_etapa_f,
-            "Próxima Ação": nova_proxima_acao,
-            "Responsável pela Oportunidade": novo_responsavel,
-        }
-        save_new_opportunity(new_opportunity)
-
-# Interface principal
 st.title("📊 CRM de Oportunidades - Allcap")
 st.subheader("Gerencie suas oportunidades de forma eficiente")
 
-# Seleção de oportunidade para edição
-st.markdown("### 📋 Oportunidades Registradas")
-selected_id = st.selectbox("Selecione uma Oportunidade para Editar", df["ID"].unique())
+df = load_data()
 
-# Filtra os dados com base no ID selecionado
-oportunidade = df[df["ID"] == selected_id].iloc[0]
+# Barra lateral para adicionar nova oportunidade
+st.sidebar.header("➕ Adicionar Nova Oportunidade")
+novo_nome = st.sidebar.text_input("Nome do Cliente")
+novo_contato = st.sidebar.text_input("Contato")
+novo_email = st.sidebar.text_input("E-mail")
+novo_telefone = st.sidebar.text_input("Telefone")
+novo_cidade = st.sidebar.text_input("Cidade")
+novo_estado = st.sidebar.text_input("Estado")
+novo_tipo_op = st.sidebar.selectbox("Tipo de Oportunidade", ["Venda", "Parceria Comercial", "Venda, Parceria Comercial"])
+novo_fase = st.sidebar.selectbox("Fase", ["Lead Em Potencial", "Em Negociação", "Proposta Aprovada", "Fechado", "Descartado Perdido"])
+novo_tipo_cliente = st.sidebar.selectbox("Tipo de Cliente", ["PF", "PJ"])
+novo_valor = st.sidebar.text_input("Valor Estimado (R$)")
 
-# Formulário para edição
-txt_nome = st.text_input("Nome do Cliente", oportunidade["Nome"])
-txt_tipo_op = st.selectbox("Tipo de Oportunidade", df["Tipo de Oportunidade"].unique(), index=list(df["Tipo de Oportunidade"].unique()).index(oportunidade["Tipo de Oportunidade"]))
-txt_fase = st.selectbox("Fase", df["Fase"].unique(), index=list(df["Fase"].unique()).index(oportunidade["Fase"]))
-txt_tipo_cliente = st.selectbox("Tipo de Cliente", df["Tipo de Cliente"].unique(), index=list(df["Tipo de Cliente"].unique()).index(oportunidade["Tipo de Cliente"]))
-txt_valor = st.text_input("Valor Estimado (R$)", oportunidade["Valor Estimado (R$)"])
-txt_cidade = st.text_input("Cidade", oportunidade["Cidade"])
-txt_estado = st.text_input("Estado", oportunidade["Estado"])
-txt_etapa = st.text_input("Etapa no Funil de Vendas", oportunidade["Etapa no Funil de Vendas"])
-txt_prox_acao = st.text_input("Próxima Ação", oportunidade["Próxima Ação"])
+if st.sidebar.button("Adicionar Oportunidade"):
+    novo_id = f"OP{len(df) + 1:03}"  # Gera um ID único
+    nova_oportunidade = {
+        "ID": novo_id,
+        "Nome": novo_nome,
+        "Contato": novo_contato,
+        "E-mail": novo_email,
+        "Telefone": novo_telefone,
+        "Cidade": novo_cidade,
+        "Estado": novo_estado,
+        "Tipo de Oportunidade": novo_tipo_op,
+        "Fase": novo_fase,
+        "Tipo de Cliente": novo_tipo_cliente,
+        "Valor Estimado (R$)": novo_valor,
+    }
+    df = df.append(nova_oportunidade, ignore_index=True)
+    save_data(df)
+    st.sidebar.success("Oportunidade adicionada com sucesso!")
 
-if st.button("Salvar Alterações"):
-    df.loc[df["ID"] == selected_id, "Nome"] = txt_nome
-    df.loc[df["ID"] == selected_id, "Tipo de Oportunidade"] = txt_tipo_op
-    df.loc[df["ID"] == selected_id, "Fase"] = txt_fase
-    df.loc[df["ID"] == selected_id, "Tipo de Cliente"] = txt_tipo_cliente
-    df.loc[df["ID"] == selected_id, "Valor Estimado (R$)"] = txt_valor
-    df.loc[df["ID"] == selected_id, "Cidade"] = txt_cidade
-    df.loc[df["ID"] == selected_id, "Estado"] = txt_estado
-    df.loc[df["ID"] == selected_id, "Etapa no Funil de Vendas"] = txt_etapa
-    df.loc[df["ID"] == selected_id, "Próxima Ação"] = txt_prox_acao
-    st.success("Alterações salvas com sucesso!")
+# Selecionar oportunidade para edição
+st.subheader("📋 Oportunidades Registradas")
+selecao = st.selectbox("Selecione uma Oportunidade para Editar", df["ID"].tolist())
+
+if selecao:
+    oportunidade = df[df["ID"] == selecao].iloc[0]
+    txt_nome = st.text_input("Nome do Cliente", oportunidade["Nome"])
+    txt_contato = st.text_input("Contato", oportunidade["Contato"])
+    txt_email = st.text_input("E-mail", oportunidade["E-mail"])
+    txt_telefone = st.text_input("Telefone", oportunidade["Telefone"])
+    txt_cidade = st.text_input("Cidade", oportunidade["Cidade"])
+    txt_estado = st.text_input("Estado", oportunidade["Estado"])
+    txt_tipo_op = st.selectbox("Tipo de Oportunidade", ["Venda", "Parceria Comercial", "Venda, Parceria Comercial"], index=["Venda", "Parceria Comercial", "Venda, Parceria Comercial"].index(oportunidade["Tipo de Oportunidade"]))
+    txt_fase = st.selectbox("Fase", ["Lead Em Potencial", "Em Negociação", "Proposta Aprovada", "Fechado", "Descartado Perdido"], index=["Lead Em Potencial", "Em Negociação", "Proposta Aprovada", "Fechado", "Descartado Perdido"].index(oportunidade["Fase"]))
+    txt_tipo_cliente = st.selectbox("Tipo de Cliente", ["PF", "PJ"], index=["PF", "PJ"].index(oportunidade["Tipo de Cliente"]))
+    txt_valor = st.text_input("Valor Estimado (R$)", oportunidade["Valor Estimado (R$)"])
+
+    if st.button("Salvar Alterações"):
+        df.loc[df["ID"] == selecao, ["Nome", "Contato", "E-mail", "Telefone", "Cidade", "Estado", "Tipo de Oportunidade", "Fase", "Tipo de Cliente", "Valor Estimado (R$)"]] = [txt_nome, txt_contato, txt_email, txt_telefone, txt_cidade, txt_estado, txt_tipo_op, txt_fase, txt_tipo_cliente, txt_valor]
+        save_data(df)
+        st.success("Alterações salvas com sucesso!")
