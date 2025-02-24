@@ -1,43 +1,56 @@
 import streamlit as st
 import pandas as pd
 
-# Função para carregar dados do CRM (pode ser substituído por um banco de dados)
+# Função para carregar dados do CRM a partir da planilha existente
 def load_data():
     try:
         df = pd.read_csv("crm_data.csv")  # Nome do arquivo CSV que armazena os dados
     except FileNotFoundError:
-        df = pd.DataFrame(columns=["ID", "Nome", "Tipo de Oportunidade", "Fase", "Produto/Solução", "Valor Estimado", "Responsável"])
+        df = pd.DataFrame(columns=["ID", "Nome", "Contato", "E-mail", "Telefone", "Cidade", "Estado", "Tipo de Oportunidade",
+                                   "Fase", "Tipo de Cliente", "Segmento de Mercado do Cliente", "Produto/Solução Específica",
+                                   "Valor Estimado (R$)", "Prazo Desejado (meses)", "Taxa de Juros (Estimativa)", "Etapa no Funil de Vendas",
+                                   "Data da Última Interação", "Próxima Ação", "Responsável pela Oportunidade", "Probabilidade de Fechamento (%)",
+                                   "Valor Total (R$)", "Data de Fechamento", "Notas/Comentários Adicionais", "Histórico de Interações"])
     return df
-
-# Função para salvar os dados no CSV
-def save_data(df):
-    df.to_csv("crm_data.csv", index=False)
 
 # Carregar dados existentes
 df = load_data()
 
-# Criar o formulário para inserir novas oportunidades
-st.sidebar.title("📌 Adicionar Nova Oportunidade")
+# Interface do Streamlit
+st.set_page_config(page_title="CRM - Allcap", layout="wide")
 
-with st.sidebar.form("nova_oportunidade"):
-    id_op = st.text_input("ID da Oportunidade")
-    nome = st.text_input("Nome do Cliente")
-    tipo_op = st.selectbox("Tipo de Oportunidade", ["Venda", "Parceria Comercial"])
-    fase = st.selectbox("Fase", ["Lead Em Potencial", "Em Negociação", "Fechado"])
-    produto = st.selectbox("Produto/Solução", ["Home Equity", "Antecipação de Recebíveis", "FIDC"])
-    valor_estimado = st.number_input("Valor Estimado (R$)", min_value=0, step=1000)
-    responsavel = st.text_input("Responsável pela Oportunidade")
-    
-    submit = st.form_submit_button("Adicionar")
+# Título do Dashboard
+st.title("📊 CRM de Oportunidades - Allcap")
 
-    if submit:
-        novo_dado = pd.DataFrame([[id_op, nome, tipo_op, fase, produto, valor_estimado, responsavel]],
-                                 columns=["ID", "Nome", "Tipo de Oportunidade", "Fase", "Produto/Solução", "Valor Estimado", "Responsável"])
-        df = pd.concat([df, novo_dado], ignore_index=True)
-        save_data(df)
-        st.success(f"Oportunidade {id_op} adicionada com sucesso!")
-        st.experimental_rerun()
-        
-# Exibir os dados atualizados
-st.write("📊 **Oportunidades Cadastradas**")
-st.dataframe(df)
+# Exibir as oportunidades cadastradas
+st.subheader("📌 Oportunidades Registradas")
+st.dataframe(df, use_container_width=True)
+
+# Seção de detalhes da oportunidade
+st.subheader("🔍 Detalhes da Oportunidade")
+selecionado = st.selectbox("Selecione uma Oportunidade:", df["ID"])
+detalhes = df[df["ID"] == selecionado].iloc[0]
+
+st.write(f"**Nome:** {detalhes['Nome']}")
+st.write(f"**Contato:** {detalhes['Contato']}")
+st.write(f"**E-mail:** {detalhes['E-mail']}")
+st.write(f"**Telefone:** {detalhes['Telefone']}")
+st.write(f"**Cidade:** {detalhes['Cidade']}, {detalhes['Estado']}")
+st.write(f"**Tipo de Oportunidade:** {detalhes['Tipo de Oportunidade']}")
+st.write(f"**Fase:** {detalhes['Fase']}")
+st.write(f"**Produto/Solução:** {detalhes['Produto/Solução Específica']}")
+st.write(f"**Valor Estimado:** R$ {detalhes['Valor Estimado (R$)']:,}")
+st.write(f"**Taxa de Juros Estimada:** {detalhes['Taxa de Juros (Estimativa)']}")
+st.write(f"**Etapa no Funil:** {detalhes['Etapa no Funil de Vendas']}")
+st.write(f"**Data da Última Interação:** {detalhes['Data da Última Interação']}")
+st.write(f"**Próxima Ação:** {detalhes['Próxima Ação']}")
+st.write(f"**Responsável:** {detalhes['Responsável pela Oportunidade']}")
+st.write(f"**Probabilidade de Fechamento:** {detalhes['Probabilidade de Fechamento (%)']}%")
+st.write(f"**Valor Total Estimado:** R$ {detalhes['Valor Total (R$)']:,}")
+st.write(f"**Data Prevista de Fechamento:** {detalhes['Data de Fechamento']}")
+st.write(f"**Notas/Comentários:** {detalhes['Notas/Comentários Adicionais']}")
+st.write(f"**Histórico de Interações:** {detalhes['Histórico de Interações']}")
+
+# Gráfico de probabilidade de fechamento
+st.subheader("📈 Probabilidade de Fechamento")
+st.progress(int(detalhes["Probabilidade de Fechamento (%)"]))
