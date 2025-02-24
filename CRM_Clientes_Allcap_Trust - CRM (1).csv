@@ -1,0 +1,107 @@
+Data Entrada,ID,Nome ,Contato ,E-mail ,Telefone,Cidade,Estado ,Tipo de Oportunidade,Fase,Tipo de Cliente,Segmento de Mercado do Cliente,Produto/Solução Específica,Valor Estimado (R$),Prazo Desejado (meses),Taxa de Juros (Estimativa),Etapa no Funil de Vendas,Data da Última Interação,Próxima Ação,Responsável pela Oportunidade,Probabilidade de Fechamento (%),Valor Total (R$),Data de Fechamento,Histórico de Interações
+01/01/2025,OP001,Carla Patricia ,Carla Instagram ,,47 9711-2204,Balneário Camboriú,Santa Catarina,Venda,Proposta Aprovada,PF,Imobiliário,Home Equity,"R$ 550.000,00",,"1,40 + IPCA",Fechado,20/01/2025,Assinatura do Contrato,Adriele Valêncio,90%,"R$ 400.000,00",03/02/2025,"Reunião inicial, Envio de documentação"
+03/01/2025,OP002,Elton e Jordana ,,,,Balneário Camboriú,Santa Catarina,Parceria Comercial,Lead Em Potencial,PJ,Imobiliário,Home Equity,"R$ 600.000,00",,,Aguardando Contato,22/01/2025,Enviar Proposta,Bruno Cordeiro,70%,"R$ 0,00",30/01/2025,"Ligação inicial, Envio de proposta"
+05/01/2025,OP003,Juliana Vzinha ,,,,Balneário Camboriú,Santa Catarina,Parceria Comercial,Lead Em Potencial,PJ,Imobiliário,Home Equity,"R$ 300.000,00",,,Aguardando Contato,23/01/2025,Aguardar Retorno,Bruno Cordeiro,60%,"R$ 0,00",05/02/2025,Envio de termos
+07/01/2025,OP004,Ludmila ,,,,Balneário Camboriú,Santa Catarina,Parceria Comercial,Lead Em Potencial,PF,Imobiliário,Fomento a Construção ,"R$ 500.000,00",,,,,,,0%,"R$ 0,00",,"Reunião inicial, Envio de documentação"
+09/01/2025,OP005,Mengalvio ,,,,Balneário Camboriú,Santa Catarina,Parceria Comercial,Em Negociação,PF,Imobiliário,"Financiamento Imobiliario, Home Equity","R$ 500.000,00",,,,,,,0%,"R$ 0,00",,"Ligação inicial, Envio de proposta"
+11/01/2025,OP006,Merilin ,,,,Balneário Camboriú,Santa Catarina,Venda,Em Negociação,PF,Cliente Final ,Home Equity,"R$ 500.000,00",,,,,,,0%,"R$ 0,00",,Envio de termos
+13/01/2025,OP007,Tia Demilce  e Tio Regi ,,,,Itambaracá,Paraná,Venda,Lead Em Potencial,PF,Agronegocio,"Farm Equity, Antecipação de Recebiveis FIDC","R$ 300.000,00",,,,,,,0%,"R$ 0,00",,"Reunião inicial, Envio de documentação"
+15/01/2025,OP008,Tio Roque ,,,,Balneário Camboriú,Santa Catarina,"Parceria Comercial, Venda",Em Negociação,PJ,Imobiliário,"Home Equity, BNDES Capital de Giro , Antecipação de Recebiveis FIDC, Fomento a Construção","R$ 30.000.000,00",,,,,,,0%,"R$ 0,00",,"Ligação inicial, Envio de proposta"
+17/01/2025,OP009,Victor e Anelize ,,,,Curitiba,Paraná,"Venda, Parceria Comercial",Lead Em Potencial,PJ,Imobiliário,Home Equity,"R$ 400.000,00",,,,,,,0%,"R$ 0,00",,Envio de termos
+19/01/2025,OP010,Dante ,,,,Balneário Camboriú,Santa Catarina,"Parceria Comercial, Venda",Lead Em Potencial,PJ,Imobiliário,"Financiamento Imobiliario, Home Equity","R$ 500.000,00",,,,,,,0%,"R$ 0,00",,"Reunião inicial, Envio de documentação"
+21/01/2025,OP011,Gui Corretor ctba ,,,,Curitiba,Paraná,"Parceria Comercial, Venda",Lead Em Potencial,PJ,Imobiliário,Home Equity,"R$ 1.000.000,00",,,,,,,0%,"R$ 0,00",,"Ligação inicial, Envio de proposta"
+23/01/2025,OP012,Fabinha e Jhon ,,,,Maringá,Paraná,Venda,Descartado Perdido,PJ,Varejo ,Antecipação de Recebiveis FIDC,"R$ 1.000.000,00",,,,,,,0%,"R$ 0,00",,"Ligação inicial, Envio de proposta e retorno negativo no momento. Quando Precisar vão entrar em Contao novamente pra saber mais "
+25/01/2025,OP013,KIKO ELETRORASTRO ,,,,Curitiba,Paraná,Venda,Descartado Perdido,PJ,Varejo ,Antecipação de Recebiveis FIDC,"R$ 1.000.000,00",,,,,,,0%,"R$ 0,00",,Ligação Inicial. Cliente não trabalha com essa modalidade 
+27/01/2025,OP014,ADRIANA FINANCEIRO BALAROTI ,,,,Curitiba,Paraná,Venda,Lead Em Potencial,PJ,Varejo ,Antecipação de Recebiveis FIDC,,,,,,,,0%,"R$ 0,00",,"Ligação inicial, Envio de proposta"
+29/01/2025,OP015,EVILASIO - ELETROLED ,,,,Joinvile,Santa Catarina,Venda,Lead Em Potencial,PJ,Varejo ,Antecipação de Recebiveis FIDC,,,,,,,,0%,"R$ 0,00",,Envio de termos
+30/01/2025,OP016,EDSON -CLIENTE ELGIN ,,,,Curitiba,Paraná,Venda,Lead Em Potencial,PJ,Varejo ,Antecipação de Recebiveis FIDC,,,,,,,,0%,"R$ 0,00",,"Reunião inicial, Envio de documentação"
+30/01/2025,OP017,FERNANDA E IOGAS ,,,,Tunas do Paraná,Paraná,Venda,Em Negociação,PF,Cliente Final ,"Financiamento Imobiliario, Home Equity, BNDES Capital de Giro, Conta Garantida","R$ 1.000.000,00",,,,,,,0%,"R$ 0,00",,"Ligação inicial, Envio de proposta"
+30/01/2025,OP018,ANDRE E VANESSA ,,,,Tunas do Paraná,Paraná,Venda,Em Negociação,PJ,Cliente Final ,"Home Equity, BNDES Capital de Giro","R$ 500.000,00",,,,,,,0%,"R$ 0,00",,Envio de termos
+30/01/2025,OP019,ANA FLAVIA E DUDU ,,,,Curitiba,Paraná,Venda,Lead Em Potencial,PF,Cliente Final ,Home Equity,,,,,,,,0%,"R$ 0,00",,"Reunião inicial, Envio de documentação"
+30/01/2025,OP020,Rodrigo Vieira,,,,Curitiba,Paraná,"Venda, Parceria Comercial",Lead Em Potencial,PF,Cliente Final ,Home Equity,"R$ 200.000,00",,,,,,,0%,"R$ 0,00",,"Ligação inicial, Envio de proposta"
+30/01/2025,OP021,Laerte Junior,,,,Balneário Camboriú,Santa Catarina,Parceria Comercial,Lead Em Potencial,PF,Cliente Final ,Home Equity,,,,,,,,0%,"R$ 0,00",,
+30/01/2025,OP022,Junior Moleta,,,,Curitiba,Paraná,Venda,Lead Em Potencial,PJ,Industria ,Antecipação de Recebiveis FIDC,"R$ 100.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP023,Ricardo Guimarães,,,,Curitiba,Paraná,Venda,Lead Em Potencial,PF,Cliente Final ,Home Equity,"R$ 500.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP024,Eber Paim,,,,Tunas do Paraná,Paraná,"Parceria Comercial, Venda",Em Negociação,PJ,Varejo ,"Antecipação de Recebiveis FIDC, BNDES Capital de Giro","R$ 300.000,00",,,,,,,,"R$ 0,00",,Apresentação Inicial envio do material 
+30/01/2025,OP025,Antônio Baldão ,,,,Tunas do Paraná,Paraná,Parceria Comercial,Em Negociação,PF,Consultorias e Serviços,"Fomento a Construção, Financiamento Imobiliario","R$ 10.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP026,Paulo Polli,,,,Curitiba,Paraná,Parceria Comercial,Lead Em Potencial,PJ,Imobiliário,Home Equity,"R$ 1.000.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP027,Roberth Reis,,,,Criciuma,Santa Catarina,Parceria Comercial,Lead Em Potencial,PF,Consultorias e Serviços,Home Equity,"R$ 500.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP028,Lilian e João,,,,Colombo ,Paraná,"Venda, Parceria Comercial",Lead Em Potencial,PJ,Varejo ,"Antecipação de Recebiveis FIDC, Home Equity, BNDES Capital de Giro","R$ 500.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP029,Ivan Souza Ribas,,,,Tunas do Paraná,Paraná,Venda,Em Negociação,PJ,Industria ,Antecipação de Recebiveis FIDC,"R$ 300.000,00",,,,,,,,"R$ 0,00",,Apresentação Inicial envio do material 
+30/01/2025,OP030,Léo Vendramini ,,,,Tunas do Paraná,Paraná,Parceria Comercial,Em Negociação,PJ,Consultorias e Serviços,Antecipação de Recebiveis FIDC,"R$ 100.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP031,Erivan Bontorin ,,,,Bocaiúva do Sul,Paraná,Parceria Comercial,Lead Em Potencial,PJ,Consultorias e Serviços,"Home Equity, Fomento a Construção , Antecipação de Recebiveis FIDC","R$ 500.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP032,Edson Batatinha,,,,Curitiba,Paraná,Venda,Lead Em Potencial,PF,Imobiliário,Home Equity,"R$ 400.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP033,Fabio Antonio Bruna,,,,Tunas do Paraná,Paraná,Venda,Em Negociação,PJ,Industria ,"Antecipação de Recebiveis FIDC, BNDES Capital de Giro","R$ 300.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP034,Reginaldo Serraria Tunas,,,,Tunas do Paraná,Paraná,Venda,Em Negociação,PJ,Industria ,"Antecipação de Recebiveis FIDC, BNDES Capital de Giro","R$ 800.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP035,Kelder Gomes,,,,Curitiba,Paraná,Venda,Lead Em Potencial,PJ,Consultorias e Serviços,Home Equity,"R$ 500.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP036,Paulo Hajime e Julio Oliveira,,,,Curitiba,Paraná,Venda,Lead Em Potencial,PJ,Consultorias e Serviços,"Home Equity, BNDES Capital de Giro","R$ 300.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP037,Lucas Rolim ,,,,Itapoá ,Santa Catarina,"Venda, Parceria Comercial",Lead Em Potencial,PF,Cliente Final ,Home Equity,"R$ 200.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP038,Marcelo Matos,,,,Maringá,Paraná,Venda,Lead Em Potencial,PF,Cliente Final ,Home Equity,,,,,,,,,"R$ 0,00",,
+30/01/2025,OP039,Orlei Reis,,,,Curitiba,Paraná,Parceria Comercial,Lead Em Potencial,PF,Imobiliário,"BNDES Capital de Giro , Fomento a Construção","R$ 100.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP040,Dudu Barros,,,,Bocaiúva do Sul,Paraná,Venda,Lead Em Potencial,PJ,Varejo ,"BNDES Capital de Giro , Fomento a Construção","R$ 1.000.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP041,Diego Diehl ,,,,Curitiba,Paraná,Parceria Comercial,Lead Em Potencial,PF,Imobiliário,"Fomento a Construção , Financiamento Imobiliario","R$ 5.000.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP042,Fernando Marcon ,,,,Curitiba,Paraná,Venda,Lead Em Potencial,PF,Cliente Final ,Home Equity,"R$ 100.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP043,Lucas Frigeri ,,,,Curitiba,Paraná,Parceria Comercial,Lead Em Potencial,PF,Imobiliário,Home Equity,"R$ 1.000.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP044,Paulo Cordeiro Chef,,,,Curitiba,Paraná,Venda,Lead Em Potencial,PF,Cliente Final ,Home Equity,"R$ 300.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP045,Arian Cesar ,,,,Bocaiúva do Sul,Paraná,Venda,Em Negociação,PF,Cliente Final ,Home Equity,"R$ 200.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP046,Luiz Fernando Cecilio ,,,,Tunas do Paraná,Paraná,Parceria Comercial,Em Negociação,PF,Imobiliário,BNDES Capital de Giro,"R$ 500.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP047,Graciely Camargo ,,,,Imbituva ,Paraná,Venda,Lead Em Potencial,PJ,Agronegocio,"Farm Equity, Antecipação de Recebiveis FIDC, Home Equity","R$ 1.000.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP048,Jhon Thomas,,,,Curitiba,Paraná,Parceria Comercial,Lead Em Potencial,PF,Consultorias e Serviços,Home Equity,"R$ 300.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP049,Everton Andrei ,,,,Curitiba,Paraná,Venda,Lead Em Potencial,PJ,Varejo ,"Antecipação de Recebiveis FIDC, Fomento a Construção , BNDES Capital de Giro, Home Equity","R$ 500.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP050,Vinicius Henrique,,,,Curitiba,Paraná,Venda,Lead Em Potencial,PJ,Consultorias e Serviços,Home Equity,"R$ 500.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP051,Adhmar Araujo Neto ,,,,Itajaí ,Santa Catarina,Venda,Lead Em Potencial,PJ,Industria ,"Fomento a Construção , Home Equity","R$ 1.000.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP052,Daniele Martins,,,,Itapema,Santa Catarina,Venda,Lead Em Potencial,PJ,Consultorias e Serviços,"Home Equity, Antecipação de Recebiveis FIDC","R$ 500.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP053,Angelo Marlboro,,,,Curitiba,Paraná,Venda,Lead Em Potencial,PJ,Industria ,"BNDES Capital de Giro , Antecipação de Recebiveis FIDC, Fomento a Construção","R$ 200.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP054,James da Talize,,,,Curitiba,Paraná,"Venda, Parceria Comercial",Lead Em Potencial,PJ,Imobiliário,"Home Equity, Fomento a Construção","R$ 1.000.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP055,Jhonatan Dalazoana,,,,Curitiba,Paraná,Venda,Lead Em Potencial,PJ,Industria ,"Home Equity, BNDES Capital de Giro","R$ 500.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP056,Gabi Guideti ,,,,Curitiba,Paraná,Parceria Comercial,Lead Em Potencial,PJ,Consultorias e Serviços,Home Equity,"R$ 200.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP057,Neto Santos,,,,Itapema,Santa Catarina,"Parceria Comercial, Venda",Lead Em Potencial,PJ,Imobiliário,"Home Equity, Fomento a Construção","R$ 10.000.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP058,Eduarda Santos,,,,Bocaiúva do Sul,Paraná,Parceria Comercial,Lead Em Potencial,PJ,Imobiliário,Home Equity,"R$ 200.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP059,Roberth Alves Xavier,,,,Curitiba,Paraná,Parceria Comercial,Lead Em Potencial,PJ,Imobiliário,Home Equity,"R$ 200.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP060,Mateus Medeiros,,,,Curitiba,Paraná,Parceria Comercial,Lead Em Potencial,PF,Consultorias e Serviços,"BNDES Capital de Giro , Antecipação de Recebiveis FIDC","R$ 100.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP061,Ajessica Zandonai ,,,,Curitiba,Paraná,Venda,Lead Em Potencial,PJ,Imobiliário,Home Equity,"R$ 300.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP062,Rodrigo Fantin ,,,,Curitiba,Paraná,Venda,Lead Em Potencial,PF,Imobiliário,Home Equity,"R$ 100.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP063,Willian Bolsi Engenharia,,,,Colombo ,Paraná,Venda,Lead Em Potencial,PJ,Industria ,"Fomento a Construção , BNDES Capital de Giro , Home Equity","R$ 500.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP064,Elton Shows,,,,Lapa,Paraná,"Venda, Parceria Comercial",Lead Em Potencial,PJ,Consultorias e Serviços,"BNDES Capital de Giro , Home Equity, Fomento a Construção","R$ 1.000.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP065,Samara Laerte,,,,Balneário Camboriú,Santa Catarina,Venda,Lead Em Potencial,PJ,Varejo ,"Home Equity, BNDES Capital de Giro","R$ 200.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP066,Felipe Francischini ,,,,Curitiba,Paraná,Venda,Lead Em Potencial,PF,Consultorias e Serviços,"Fomento a Construção , Farm Equity","R$ 1.000.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP067,Guilherme Gvit,,,,Curitiba,Paraná,Venda,Lead Em Potencial,PJ,Consultorias e Serviços,"Antecipação de Recebiveis FIDC, Home Equity","R$ 500.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP068,Tales Junior Gelo Graciosa,,,,Colombo ,Paraná,Venda,Lead Em Potencial,PJ,Industria ,"Antecipação de Recebiveis FIDC, Home Equity","R$ 500.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP069,Andre Cordeiro ,,,,Curitiba,Paraná,Parceria Comercial,Lead Em Potencial,PF,Imobiliário,"Home Equity, Financiamento Imobiliario","R$ 300.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP070,Andre Garcia,,,,Curitiba,Paraná,"Venda, Parceria Comercial",Lead Em Potencial,PF,Consultorias e Serviços,Home Equity,"R$ 300.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP071,Maike Borges ,,,,Curitiba,Paraná,Venda,Lead Em Potencial,PJ,Varejo ,Home Equity,"R$ 300.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP072,Franciel Tunas Serraria,,,,Tunas do Paraná,Paraná,Venda,Em Negociação,PJ,Industria ,"Antecipação de Recebiveis FIDC, BNDES Capital de Giro","R$ 1.200.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP073,Solimar Maracana Serraria Tunas,,,,Tunas do Paraná,Paraná,Venda,Em Negociação,PJ,Industria ,"BNDES Capital de Giro , Antecipação de Recebiveis FIDC, Home Equity","R$ 3.000.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP074,Poli Madeireira Tunas ,,,,Tunas do Paraná,Paraná,Venda,Em Negociação,PJ,Industria ,"Antecipação de Recebiveis FIDC, BNDES Capital de Giro , Home Equity","R$ 2.000.000,00",,,,,,,,"R$ 0,00",,
+30/01/2025,OP075,Carlielson Straub,,,,Tunas do Paraná,Paraná,Venda,Descartado Perdido,PJ,Industria ,"BNDES Capital de Giro , Antecipação de Recebiveis FIDC, Home Equity","R$ 1.500.000,00",,,,,,,,"R$ 0,00",,Cliente não precisa de capital no momento. Tem interesse em aproveitar alguma oportunidade de negocio no litoral caso eu  tenha acesso. 
+31/01/2025,OP076,THAYZE BEN-HUR ,,,,Maringá,Paraná,"Venda, Parceria Comercial",Lead Em Potencial,PF,Imobiliário,,,,,,,,,,,,
+01/02/2025,OP077,Tia Sandra e Tio Ramil ,,,,Maringá,Paraná,"Venda, Parceria Comercial",Lead Em Potencial,PF,Consultorias e Serviços,,,,,,,,,,,,
+02/02/2025,OP078,Moises Pessutti / Orlando Pessutti ,,,,Curitiba ,Paraná,"Parceria Comercial, Venda",Lead Em Potencial,PF,Cliente Final ,,,,,,,,,,,,
+03/02/2025,OP079,Tia Sonia ,,,,Curitiba ,Paraná,Venda,Lead Em Potencial,PF,Cliente Final ,,,,,,,,,,,,
+04/02/2025,OP080,Michele kuster Heubel ,,,,Balneário Camboriú,Santa Catarina,Venda,Lead Em Potencial,PJ,Cliente Final ,,,,,,,,,,,,
+05/02/2025,OP081,MG Pallets Roberto Sestrem,,,,Tunas do Paraná,Paraná,Venda,Em Negociação,PJ,Industria ,"Antecipação de Recebiveis FIDC, Home Equity, Farm Equity","R$ 1.000.000,00",,,,,,,,,,
+10/02/2025,OP082,Eliezer Couto Gonçalves,,,,Tunas do Paraná,Paraná,"Venda, Parceria Comercial",Proposta Aprovada,PJ,Varejo ,"Antecipação de Recebiveis FIDC, BNDES Capital de Giro","R$ 100.000,00",,,,,,,,,,Proposta de FIDC apresentada e Cadastro  Aprovado pela Trust
+11/02/2025,OP083,Mariany ( Bruno Corretor J8),,,,Curitiba ,Paraná ,Parceria Comercial,Lead Em Potencial,PJ,Imobiliário,"Home Equity, Fomento a Construção",,,,,,,,,,,
+12/02/2025,OP084,Juliana Martins ,,,,Maringá,Paraná ,Venda,Lead Em Potencial,PF,Agronegocio,"Farm Equity, Home Equity, BNDES Capital de Giro , Fomento a Construção , Antecipação de Recebiveis FIDC",,,,,,,,,,,
+13/02/2025,OP085,Sueli Carneiro ,,,,São Miguel ,Paraná ,Venda,Lead Em Potencial,PF,Cliente Final ,,,,,,,,,,,,
+14/02/2025,OP086,Rodrigo Carneiro ,,,,Genebra ,Suiça ,Venda,Lead Em Potencial,PF,Cliente Final ,,,,,,,,,,,,
+15/02/2025,OP087,Aline Turella ,,,,,Rio Grande do Sul ,"Venda, Parceria Comercial",Lead Em Potencial,PJ,Arquiteta ,,,,,,,,,,,,
+16/02/2025,OP088,Gabi Pinheiro ,,,,Balneario Camboriu ,Santa Catarina,Venda,Lead Em Potencial,PJ,Industria ,,,,,,,,,,,,
+17/02/2025,OP089,Luciana e Vivi Salão de Beleza ,,,,Balneario Camboriu ,Santa Catarina,Venda,Lead Em Potencial,PJ,Varejo ,,,,,,,,,,,,
+18/02/2025,OP090,Gabriela Eloy ,,,,São Paulo ,São Paulo ,Venda,Lead Em Potencial,PJ,Consultorias e Serviços,,,,,,,,,,,,
+19/02/2025,OP091,Thaysa Acunpultura ,,,,Balneario Camboriu ,Santa Catarina,Venda,Lead Em Potencial,PJ,Consultorias e Serviços,,,,,,,,,,,,
+20/02/2025,OP092,Katia Casa Mariscal ,,,,Bombinhas ,Santa Catarina,Venda,Lead Em Potencial,PJ,Imobiliário,,,,,,,,,,,,
+21/02/2025,OP093,Tacius ,,,,Itajai ,Santa Catarina,"Venda, Parceria Comercial",Lead Em Potencial,PJ,Consultorias e Serviços,,,,,,,,,,,,
+22/02/2025,OP094,Humberto Zart ,,,,Balneario Camboriu ,Santa Catarina,"Venda, Parceria Comercial",Lead Em Potencial,PJ,Industria ,,,,,,,,,,,,
+23/02/2025,OP095,Bruno Fregulia ,,,,Balneario Camboriu ,Santa Catarina,Parceria Comercial,Lead Em Potencial,PF,Imobiliário,,,,,,,,,,,,
+24/02/2025,OP096,Natielly Martins,,,,Balneario Camboriu ,Santa Catarina,Parceria Comercial,Lead Em Potencial,PJ,Consultorias e Serviços,,,,,,,,,,,,
+25/02/2025,OP097,Pedro Paludo ,,,,Balneario Camboriu ,Santa Catarina,Parceria Comercial,Lead Em Potencial,PJ,Consultorias e Serviços,,,,,,,,,,,,
+26/02/2025,OP098,Isa Slotz ,,,,Balneario Camboriu ,Santa Catarina,Parceria Comercial,Lead Em Potencial,PJ,Consultorias e Serviços,,,,,,,,,,,,
+27/02/2025,OP099,Gislaine Xavier ,,,,Maringá ,Parana ,Venda,Lead Em Potencial,PF,Cliente Final ,,,,,,,,,,,,
+28/02/2025,OP100,Tayla ,,,,Maringá ,Parana ,"Parceria Comercial, Venda",Lead Em Potencial,PJ,Imobiliário,,,,,,,,,,,,
+01/03/2025,OP101,Tio Zacarias ,,,,Maringa ,Parana ,"Parceria Comercial, Venda",Lead Em Potencial,PJ,Imobiliário,,,,,,,,,,,,
+02/03/2025,OP102,Luana Prima ,,,,Maringa ,Parana ,Venda,Lead Em Potencial,PJ,Cliente Final ,,,,,,,,,,,,
+03/03/2025,OP103,Jana Farias ,,,,Maringa ,Parana ,Venda,Lead Em Potencial,PJ,Varejo ,,,,,,,,,,,,
+04/03/2025,OP104,Luciana Companhoni ,,,,Maringa ,Parana ,Venda,Lead Em Potencial,PJ,Arquiteta ,,,,,,,,,,,,
+05/03/2025,OP105,Mauro Ticianel ,,,,Maringa ,Parana ,Venda,Lead Em Potencial,PF,Cliente Final ,,,,,,,,,,,,
+06/03/2025,OP106,Guilherme Mansur ,,,,Curitiba ,Parana ,Venda,Lead Em Potencial,PJ,Cliente Final ,,,,,,,,,,,,
