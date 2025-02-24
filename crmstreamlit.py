@@ -51,7 +51,7 @@ with st.sidebar:
 
         st.session_state.oportunidades = pd.concat([st.session_state.oportunidades, nova_oportunidade], ignore_index=True)
         st.success(f"Oportunidade {novo_id} adicionada com sucesso!")
-        st.experimental_rerun()  # Atualiza a interface para refletir as mudanças
+        st.rerun()  # Substituído o experimental_rerun()
 
 # Seção principal - Edição de oportunidades
 st.markdown("## 📋 Oportunidades Registradas")
@@ -95,7 +95,7 @@ if not st.session_state.oportunidades.empty:
             txt_tipo_oportunidade, txt_fase, txt_tipo_cliente, txt_valor_estimado, txt_etapa_funil, txt_proxima_acao
         ]
         st.success(f"Oportunidade {id_selecionado} atualizada com sucesso!")
-        st.experimental_rerun()
+        st.rerun()
 
 else:
     st.info("Nenhuma oportunidade cadastrada ainda. Use o menu lateral para adicionar.")
