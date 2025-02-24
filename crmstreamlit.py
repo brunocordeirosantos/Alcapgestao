@@ -1,77 +1,55 @@
 import streamlit as st
 import pandas as pd
-from datetime import datetime
 
-# URL do arquivo CSV no GitHub (substitua pelo link bruto do seu repositório)
-CSV_URL = "https://raw.githubusercontent.com/brunocordeirosantos/Alcapgestao/main/CRM_Clientes_Allcap_Trust%20-%20CRM%20(1).csv"
+# URL do CSV no GitHub
+github_url = "https://raw.githubusercontent.com/brunocordeirosantos/Alcapgestao/main/CRM_Clientes_Allcap_Trust%20-%20CRM%20(1).csv"
 
-# Função para carregar os dados do GitHub
-@st.cache_data
 def load_data():
-    df = pd.read_csv(CSV_URL, sep=",")
-    return df
+    try:
+        df = pd.read_csv(github_url, delimiter=',', encoding='utf-8', dtype=str)
+        df.fillna("", inplace=True)  # Preenchendo valores nulos
+        return df
+    except Exception as e:
+        st.error(f"Erro ao carregar os dados: {e}")
+        return pd.DataFrame()
 
+# Carregar dados
 df = load_data()
 
-# Título do app
 st.title("📊 CRM de Oportunidades - Allcap")
 st.subheader("Gerencie suas oportunidades de forma eficiente")
 
-# Formulário para adicionar nova oportunidade
-st.sidebar.header("➕ Adicionar Nova Oportunidade")
-with st.sidebar.form("nova_oportunidade"):
-    nome = st.text_input("Nome do Cliente")
-    contato = st.text_input("Contato")
-    email = st.text_input("E-mail")
-    telefone = st.text_input("Telefone")
-    cidade = st.text_input("Cidade")
-    estado = st.text_input("Estado")
-    tipo_oportunidade = st.selectbox("Tipo de Oportunidade", ["Venda", "Parceria Comercial", "Ambos"])
-    fase = st.selectbox("Fase", ["Lead Em Potencial", "Em Negociação", "Proposta Aprovada", "Fechado", "Descartado Perdido"])
-    tipo_cliente = st.selectbox("Tipo de Cliente", ["PF", "PJ"])
-    segmento_mercado = st.text_input("Segmento do Cliente")
-    produto = st.text_input("Produto/Solução Específica")
-    valor_estimado = st.number_input("Valor Estimado (R$)", min_value=0.0, step=1000.0)
-    prazo_desejado = st.number_input("Prazo Desejado (meses)", min_value=0, step=1)
-    taxa_juros = st.text_input("Taxa de Juros (Estimativa)")
-    etapa_funil = st.text_input("Etapa no Funil de Vendas")
-    ultima_interacao = st.date_input("Data da Última Interação", datetime.today())
-    proxima_acao = st.text_input("Próxima Ação")
-    responsavel = st.text_input("Responsável pela Oportunidade")
-    probabilidade = st.slider("Probabilidade de Fechamento (%)", 0, 100, 50)
-    valor_total = st.number_input("Valor Total (R$)", min_value=0.0, step=1000.0)
-    data_fechamento = st.date_input("Data de Fechamento", datetime.today())
-    historico_interacoes = st.text_area("Histórico de Interações")
+# Seção para exibir e editar oportunidades
+st.markdown("### 📋 Oportunidades Registradas")
+if not df.empty:
+    selected_id = st.selectbox("Selecione uma Oportunidade para Editar", df["ID"])
+    oportunidade = df[df["ID"] == selected_id].iloc[0]
+
+    # Criando campos editáveis
+    col1, col2 = st.columns(2)
+    with col1:
+        nome = st.text_input("Nome do Cliente", oportunidade["Nome "])
+        contato = st.text_input("Contato", oportunidade["Contato "])
+        email = st.text_input("E-mail", oportunidade["E-mail "])
+        telefone = st.text_input("Telefone", oportunidade["Telefone"])
+        cidade = st.text_input("Cidade", oportunidade["Cidade"])
+        estado = st.text_input("Estado", oportunidade["Estado "])
     
-    submit = st.form_submit_button("Adicionar Oportunidade")
-    if submit:
-        novo_id = f"OP{len(df)+1:03d}"
-        nova_oportunidade = pd.DataFrame([[
-            datetime.today().strftime('%d/%m/%Y'), novo_id, nome, contato, email, telefone, cidade, estado, 
-            tipo_oportunidade, fase, tipo_cliente, segmento_mercado, produto, valor_estimado, prazo_desejado, 
-            taxa_juros, etapa_funil, ultima_interacao, proxima_acao, responsavel, probabilidade, valor_total, 
-            data_fechamento, historico_interacoes
-        ]], columns=df.columns)
-        df = pd.concat([df, nova_oportunidade], ignore_index=True)
-        st.success("✅ Oportunidade adicionada com sucesso!")
+    with col2:
+        tipo_oportunidade = st.selectbox("Tipo de Oportunidade", df["Tipo de Oportunidade"].unique(), index=list(df["Tipo de Oportunidade"]).index(oportunidade["Tipo de Oportunidade"]))
+        fase = st.selectbox("Fase", df["Fase"].unique(), index=list(df["Fase"]).index(oportunidade["Fase"]))
+        tipo_cliente = st.selectbox("Tipo de Cliente", df["Tipo de Cliente"].unique(), index=list(df["Tipo de Cliente"]).index(oportunidade["Tipo de Cliente"]))
+        valor_estimado = st.text_input("Valor Estimado (R$)", oportunidade["Valor Estimado (R$)"])
+        etapa_funnel = st.text_input("Etapa no Funil de Vendas", oportunidade["Etapa no Funil de Vendas"])
+        proxima_acao = st.text_input("Próxima Ação", oportunidade["Próxima Ação"])
+    
+    # Botão para salvar alterações
+    if st.button("Salvar Alterações"):
+        df.loc[df["ID"] == selected_id, ["Nome ", "Contato ", "E-mail ", "Telefone", "Cidade", "Estado ", "Tipo de Oportunidade", "Fase", "Tipo de Cliente", "Valor Estimado (R$)", "Etapa no Funil de Vendas", "Próxima Ação"]] = [
+            nome, contato, email, telefone, cidade, estado, tipo_oportunidade, fase, tipo_cliente, valor_estimado, etapa_funnel, proxima_acao
+        ]
+        st.success("Alterações salvas com sucesso!")
 
-# Seleção de oportunidade para edição
-st.subheader("📋 Oportunidades Registradas")
-selecao = st.selectbox("Selecione uma Oportunidade para Editar", df["ID"].tolist())
-
-if selecao:
-    oportunidade = df[df["ID"] == selecao].iloc[0]
-    with st.form("editar_oportunidade"):
-        nome = st.text_input("Nome do Cliente", oportunidade["Nome"])
-        fase = st.selectbox("Fase", ["Lead Em Potencial", "Em Negociação", "Proposta Aprovada", "Fechado", "Descartado Perdido"], index=["Lead Em Potencial", "Em Negociação", "Proposta Aprovada", "Fechado", "Descartado Perdido"].index(oportunidade["Fase"]))
-        valor_estimado = st.number_input("Valor Estimado (R$)", min_value=0.0, step=1000.0, value=oportunidade["Valor Estimado (R$)"])
-        probabilidade = st.slider("Probabilidade de Fechamento (%)", 0, 100, int(oportunidade["Probabilidade de Fechamento (%)"]))
-        data_fechamento = st.date_input("Data de Fechamento", datetime.today())
-        submit_editar = st.form_submit_button("Salvar Alterações")
-        
-        if submit_editar:
-            df.loc[df["ID"] == selecao, ["Nome", "Fase", "Valor Estimado (R$)", "Probabilidade de Fechamento (%)", "Data de Fechamento"]] = [nome, fase, valor_estimado, probabilidade, data_fechamento]
-            st.success("✅ Oportunidade atualizada com sucesso!")
-
-# Exibir DataFrame atualizado
-st.write(df)
+    st.dataframe(df)
+else:
+    st.warning("Nenhuma oportunidade encontrada.")
